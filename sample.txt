@@ -1,0 +1,32 @@
+(in F:/Test checkout/sample)
+                                    exps GET    /exps(.:format)                                          {:controller=>"exps", :action=>"index"}
+                                         POST   /exps(.:format)                                          {:controller=>"exps", :action=>"create"}
+                                 new_exp GET    /exps/new(.:format)                                      {:controller=>"exps", :action=>"new"}
+                                edit_exp GET    /exps/:id/edit(.:format)                                 {:controller=>"exps", :action=>"edit"}
+                                     exp GET    /exps/:id(.:format)                                      {:controller=>"exps", :action=>"show"}
+                                         PUT    /exps/:id(.:format)                                      {:controller=>"exps", :action=>"update"}
+                                         DELETE /exps/:id(.:format)                                      {:controller=>"exps", :action=>"destroy"}
+                         exp_perticulers GET    /exp_perticulers(.:format)                               {:controller=>"exp_perticulers", :action=>"index"}
+                                         POST   /exp_perticulers(.:format)                               {:controller=>"exp_perticulers", :action=>"create"}
+                      new_exp_perticuler GET    /exp_perticulers/new(.:format)                           {:controller=>"exp_perticulers", :action=>"new"}
+                     edit_exp_perticuler GET    /exp_perticulers/:id/edit(.:format)                      {:controller=>"exp_perticulers", :action=>"edit"}
+                          exp_perticuler GET    /exp_perticulers/:id(.:format)                           {:controller=>"exp_perticulers", :action=>"show"}
+                                         PUT    /exp_perticulers/:id(.:format)                           {:controller=>"exp_perticulers", :action=>"update"}
+                                         DELETE /exp_perticulers/:id(.:format)                           {:controller=>"exp_perticulers", :action=>"destroy"}
+                     expence_perticulers GET    /expence_perticulers(.:format)                           {:controller=>"expence_perticulers", :action=>"index"}
+                                         POST   /expence_perticulers(.:format)                           {:controller=>"expence_perticulers", :action=>"create"}
+                  new_expence_perticuler GET    /expence_perticulers/new(.:format)                       {:controller=>"expence_perticulers", :action=>"new"}
+                 edit_expence_perticuler GET    /expence_perticulers/:id/edit(.:format)                  {:controller=>"expence_perticulers", :action=>"edit"}
+exp_perticuler_select_expence_perticuler GET    /expence_perticulers/:id/exp_perticuler_select(.:format) {:controller=>"expence_perticulers", :action=>"exp_perticuler_select"}
+                      expence_perticuler GET    /expence_perticulers/:id(.:format)                       {:controller=>"expence_perticulers", :action=>"show"}
+                                         PUT    /expence_perticulers/:id(.:format)                       {:controller=>"expence_perticulers", :action=>"update"}
+                                         DELETE /expence_perticulers/:id(.:format)                       {:controller=>"expence_perticulers", :action=>"destroy"}
+                                expences GET    /expences(.:format)                                      {:controller=>"expences", :action=>"index"}
+                                         POST   /expences(.:format)                                      {:controller=>"expences", :action=>"create"}
+                             new_expence GET    /expences/new(.:format)                                  {:controller=>"expences", :action=>"new"}
+                            edit_expence GET    /expences/:id/edit(.:format)                             {:controller=>"expences", :action=>"edit"}
+                                 expence GET    /expences/:id(.:format)                                  {:controller=>"expences", :action=>"show"}
+                                         PUT    /expences/:id(.:format)                                  {:controller=>"expences", :action=>"update"}
+                                         DELETE /expences/:id(.:format)                                  {:controller=>"expences", :action=>"destroy"}
+                                                /:controller/:action/:id                                 
+                                                /:controller/:action/:id(.:format)                       
