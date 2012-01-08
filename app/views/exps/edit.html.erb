@@ -1,0 +1,32 @@
+<h1>Editing exp</h1>
+
+<% form_for(@exp) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :exp_perticuler_id %><br />
+    <%= f.text_field :exp_perticuler_id %>
+  </p>
+  <p>
+    <%= f.label :exp_value %><br />
+    <%= f.text_field :exp_value %>
+  </p>
+  <p>
+    <%= f.label :cluster_name %><br />
+    <%= f.text_field :cluster_name %>
+  </p>
+  <p>
+    <%= f.label :shop_name %><br />
+    <%= f.text_field :shop_name %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @exp %> |
+<%= link_to 'Back', exps_path %>

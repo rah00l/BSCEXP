@@ -1,0 +1,20 @@
+<h1>Listing exp_perticulers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @exp_perticulers.each do |exp_perticuler| %>
+  <tr>
+    <td><%=h exp_perticuler.name %></td>
+    <td><%= link_to 'Show', exp_perticuler %></td>
+    <td><%= link_to 'Edit', edit_exp_perticuler_path(exp_perticuler) %></td>
+    <td><%= link_to 'Destroy', exp_perticuler, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New exp_perticuler', new_exp_perticuler_path %>

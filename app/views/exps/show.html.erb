@@ -1,0 +1,28 @@
+<p>
+  <b>Exp perticuler:</b>
+  <%=h @exp.exp_perticuler_id %>
+</p>
+
+<p>
+  <b>Exp value:</b>
+  <%=h @exp.exp_value %>
+</p>
+
+<p>
+  <b>Cluster name:</b>
+  <%=h @exp.cluster_name %>
+</p>
+
+<p>
+  <b>Shop name:</b>
+  <%=h @exp.shop_name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @exp.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_exp_path(@exp) %> |
+<%= link_to 'Back', exps_path %>

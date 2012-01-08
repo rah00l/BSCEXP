@@ -1,0 +1,26 @@
+<h1>Listing expence_perticulers</h1>
+<%= link_to 'New expence_perticuler', new_expence_perticuler_path %>
+<table>
+<tr><th>
+<%@expence_perticulers.each do |expence_perticuler| %>
+   <%=h expence_perticuler.expence.name %>
+ <%end%>
+Cluster Name Shop Name Date
+</th></tr>
+<% @grouped_expence_perticuler.each_pair do |x,y| %>
+<tr><td>
+<%#= @expence.find {|i| i.id == x}.name %>
+        <% y.each do |@r| %>
+            <%#= r.inspect %>
+            <%= @r["exp_value"] %>
+            <%= @r["description"] %>
+            <%#= r["cluser_name"] %>
+        <%end%>
+ <%= @r[:cluser_name] %>
+    <%= @r[:shop_name] %>
+    <%=  @r[:date]%>
+      <%#= link_to 'Edit', edit_expence_perticuler_path(@expence_perticulers.find {|i| i.date == x}.date,:id=>@expence_perticulers.id, :date=> "#{@r[:date]}",:clust_name => "#{@r['cluser_name']}",:shop_name => "#{@r['shop_name']}") %>
+ </td></tr><br/>
+   <%end%>
+</table>
+    

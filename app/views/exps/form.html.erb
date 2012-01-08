@@ -1,0 +1,23 @@
+<%= f.error_messages %>
+<p>
+  <%= f.label :cluster_name %><br />
+  <%= f.text_field :cluster_name %>
+</p>
+<p>
+  <%= f.label :shop_name %><br />
+  <%= f.text_field :shop_name %>
+</p>
+<p>
+  <%= f.label :date %><br />
+  <%= f.date_select :date %>
+</p>
+<h2>Expenses</h2>
+<% f.fields_for :exps_attributes do |exp_form| %>
+  <p>
+    <%= exp_form.label :name  %>
+    <%= exp_form.text_field :name %>
+  </p>
+<% end %>
+<p>
+  <%= f.submit 'Create' %>
+</p>

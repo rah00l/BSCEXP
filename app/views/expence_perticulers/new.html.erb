@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <script type="text/javascript">
+  window.onload=function()
+{
+var cash=document.getElementById('expence_perticuler_cluser_name');
+cash.focus();
+var sub_button=document.getElementById('expence_perticuler_submit');
+sub_button.disabled=true;
+}
+function cursormovment(id)
+{
+    
+    var tot = document.getElementById('expence_perticuler_total');
+    var exp_sec = document.getElementById('expence_perticuler1_expence_attributes_0_expence_value');
+    if(event.keyCode==13)
+    {
+      var sub_button=document.getElementById(id);
+      if( sub_button!=null)
+        sub_button.focus();
+      else if(exp_sec!=null)
+          exp_sec.focus();
+      else
+        tot.focus();
+    }
+
+  }
+  function cursormovment_sec(id)
+{
+
+    var tot=document.getElementById('expence_perticuler_total');
+    if(event.keyCode==13)
+    {
+      var sub_button=document.getElementById(id);
+      if( sub_button!=null)
+        sub_button.focus();
+      else
+          tot.focus();
+    }
+
+  }
+
+function totcalculate(count)
+{
+  var str = 'expence_perticuler_expence_attributes_';
+  var str1 = '_expence_value'
+   var sum = 0;
+   for(var i=0;i<count;i++)
+  {
+    var str2 = str.concat(i,str1);
+     var exp_per = document.getElementById(str2).value;
+     sum = sum + parseInt(exp_per);
+     
+  }
+  var tot=document.getElementById('expence_perticuler_total');
+  var adj = total_adjustment(sum);
+  var tot1=document.getElementById('expence_perticuler_total1');
+tot.value = sum;
+tot1.value=adj;
+var sub_button=document.getElementById('expence_perticuler_submit');
+sub_button.disabled=false;
+}
+function total_adjustment(sum)
+{
+  var reminder = parseInt(sum)%10;
+  if(reminder < 5)
+  return  sum = parseInt(sum) - parseInt(reminder);
+  else if(reminder == 0)
+  return sum = sum;
+  else
+  {
+    var diff = 10 - parseInt(reminder);
+    return sum = parseInt(sum) + parseInt(diff);
+  }
+}
+
+function onlyNumbers(evt)
+{
+	var e = event || evt; // for trans-browser compatibility
+	var charCode = e.which || e.keyCode;
+
+    if(charCode > 31 && (charCode < 48 || charCode > 57))
+		return false;
+    else
+           return true;
+
+
+}
+</script>
+
+  </head>
+  <body>
+<h1>New expence_perticuler</h1>
+
+  <%= render "form"%>
+
+<%= link_to 'Back', expence_perticulers_path %>
+
+
+</body>
+</html>

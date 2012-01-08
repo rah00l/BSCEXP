@@ -1,0 +1,39 @@
+<script>
+  function cursormove()
+  {
+    alert('-0-0-');
+      
+    if(event.keyCode==13)
+      //alert('-*-*-');
+    return false;
+  }
+</script>
+<% form_for(@expence_perticuler) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :cluser_name %><br />
+    <%= f.text_field :cluser_name, :onKeyDown=>"if(event.keyCode==13) this.form.expence_perticuler_shop_name.focus();"%>
+  </p>
+
+  <p>
+    <%= f.label :shop_name %><br />
+    <%= f.text_field :shop_name, :onKeyDown=>"if(event.keyCode==13) this.form.expence_perticuler_date.focus();"%>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.text_field :date,:onKeyDown=>"if(event.keyCode==13) this.form.expence_perticuler_expence_attributes_0_expence_value.focus();" %>
+  </p>
+
+<%= render "expence_perticuler", {:f => f}%>
+
+
+  <p>
+    <%if controller.action_name.eql?('new')%>
+      <%= f.submit 'Create' %>
+    <%else %>
+    <%= f.submit 'update' %>
+    <%end%>
+  </p><% end %>
+
+  

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  exp_perticuler_id: 1
+  exp_value: 1
+  cluster_name: MyString
+  shop_name: MyString
+  date: 2011-07-31
+
+two:
+  exp_perticuler_id: 1
+  exp_value: 1
+  cluster_name: MyString
+  shop_name: MyString
+  date: 2011-07-31

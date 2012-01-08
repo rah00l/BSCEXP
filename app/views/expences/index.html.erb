@@ -1,0 +1,28 @@
+<h1>Listing expences</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @expences.each do |expence| %>
+  <tr>
+    <td><%=h expence.name %></td>
+    
+    <td><%  if expence.exp_type? %>
+      <%= 'pri' %>
+      <%else%>
+      <%=  'sec'  %>
+      <%end%>
+    </td>
+
+    <td><%= link_to 'Show', expence %></td>
+    <td><%= link_to 'Edit', edit_expence_path(expence) %></td>
+    <td><%= link_to 'Destroy', expence, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New expence', new_expence_path %>

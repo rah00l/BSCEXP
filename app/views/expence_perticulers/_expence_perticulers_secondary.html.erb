@@ -1,0 +1,9 @@
+<%  @expence_secondary.each_with_index do |exp,idx| %>
+    <%= hidden_field_tag "expence_perticuler1[expence_attributes][#{idx}][expence_id]", exp.id %>
+    <p><%= f.label exp.name%><br/>
+    <%= text_field_tag "expence_perticuler1[expence_attributes][#{idx}][expence_value]",'', :onkeypress=>"return onlyNumbers(event);",:onblur=>"if(this.value.length<1){alert('Please Enter Value');this.focus(); }", :onKeyDown=>"cursormovment_sec('expence_perticuler1_expence_attributes_#{idx}_description');" %><br/>
+    </p>
+    <p><%= 'Description'%><br/>
+    <%= text_area_tag "expence_perticuler1[expence_attributes][#{idx}][description]",'', :onKeyDown=>"cursormovment_sec('expence_perticuler1_expence_attributes_#{idx+1}_expence_value');" %><br/>
+    </p>
+  <%end%>

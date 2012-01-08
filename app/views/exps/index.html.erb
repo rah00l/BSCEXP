@@ -1,0 +1,28 @@
+<h1>Listing exps</h1>
+
+<table>
+  <tr>
+    <th>Exp perticuler</th>
+    <th>Exp value</th>
+    <th>Cluster name</th>
+    <th>Shop name</th>
+    <th>Date</th>
+  </tr>
+
+<% @exps.each do |exp| %>
+  <tr>
+    <td><%=h exp.exp_perticuler_id %></td>
+    <td><%=h exp.exp_value %></td>
+    <td><%=h exp.cluster_name %></td>
+    <td><%=h exp.shop_name %></td>
+    <td><%=h exp.date %></td>
+    <td><%= link_to 'Show', exp %></td>
+    <td><%= link_to 'Edit', edit_exp_path(exp) %></td>
+    <td><%= link_to 'Destroy', exp, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New exp', new_exp_path %>

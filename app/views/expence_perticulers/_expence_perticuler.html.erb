@@ -1,0 +1,25 @@
+<%if controller.action_name.eql?('new')%>
+  <%  @expence_primary.each_with_index do |exp,idx| %>
+    <%= hidden_field_tag "expence_perticuler[expence_attributes][#{idx}][expence_id]", exp.id %>
+    <p><%= f.label exp.name%><br/>
+    <%= text_field_tag "expence_perticuler[expence_attributes][#{idx}][expence_value]",'', :onkeypress=>"return onlyNumbers(event);",:onblur=>"if(this.value.length<1){alert('Please Enter Value');this.focus(); }", :onKeyDown=>"cursormovment('expence_perticuler_expence_attributes_#{idx}_description');" %><br/>
+    </p>
+    <p><%= 'Description'%><br/>
+    <%= text_area_tag "expence_perticuler[expence_attributes][#{idx}][description]",'', :onKeyDown=>"cursormovment('expence_perticuler_expence_attributes_#{idx+1}_expence_value');" %><br/>
+    </p>
+  <%end%>
+  <%= render "expence_perticulers_secondary", {:f => f} %>
+
+    <p>Total<br/>
+<%= text_field_tag "expence_perticuler_total",'', :onkeypress=>"return totcalculate(#{@expence_primary.length});",:onblur=>"if(event.keyCode==13) this.form.expence_perticuler_total1.focus();"%><br/></p>
+    <p>Adj Total
+<%= text_field_tag "expence_perticuler_total1",'', :onkeypress=>"return totcalculate();"%><br/></p>
+<%else%>
+  <%  @expence_perticuler.each_with_index do |exp,idx| %>
+    <tr>
+      <td><%= exp.expence.name %>
+      <%= hidden_field_tag "expence_perticuler[expence_attributes][#{idx}][expence_id]", exp.id %></td>
+      <td><%= text_field_tag "expence_perticuler[expence_attributes][#{idx}][expence_value]",exp.exp_value  %></td>
+    </tr>
+  <%end%>
+<%end%>

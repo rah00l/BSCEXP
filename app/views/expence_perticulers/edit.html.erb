@@ -1,0 +1,15 @@
+<h1>Editing expence_perticuler</h1>
+<%#= render "form"%>
+<%form_tag :controller => 'expence_perticulers' , :action => :update do%>
+<%  @expence_perticuler.each_with_index do |exp,idx| %>
+      <tr>
+        <td><%= exp.expence.name %>
+        <%= hidden_field_tag "expence_perticuler[expence_attributes][#{idx}][expence_id]", exp.id %></td>
+        <td><%= text_field_tag "expence_perticuler[expence_attributes][#{idx}][expence_value]",exp.exp_value  %></td>
+      </tr>
+<%end%>
+<%= submit_tag  %>
+<%end%>
+
+<%#= link_to 'Show', @expence_perticuler %> |
+<%#= link_to 'Back', expence_perticulers_path %>
